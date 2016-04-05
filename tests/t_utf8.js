@@ -37,4 +37,7 @@ describe('utf8', function () {
     it('four byte sequence (han character)', function() {
         validate("𤽜", [0xf0, 0xa4, 0xbd, 0x9c]);
     });
+    it('emojis', function() {
+        validate("😀", [0xf0, 0x9f, 0x98, 0x80]);
+    });
 });

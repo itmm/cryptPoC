@@ -6,6 +6,7 @@ var base64 = {};
 
     var mapping = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
     var l = mapping.length;
+    var last_ch = ' ';
     for (var i = 0; i < l; ++i) {
         var c = mapping.charAt(i);
         lookup.push(c);
