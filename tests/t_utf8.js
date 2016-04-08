@@ -40,4 +40,9 @@ describe('utf8', function () {
     it('emojis', function() {
         validate("😀", [0xf0, 0x9f, 0x98, 0x80]);
     });
+    it('build emojis string', function() {
+        var emoji = "😀";
+        var restructured = String.fromCharCode(emoji.charCodeAt(0), emoji.charCodeAt(1));
+        assert.equal(emoji, restructured);
+    });
 });

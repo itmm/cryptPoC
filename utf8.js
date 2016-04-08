@@ -75,15 +75,11 @@ var utf8 = {};
             if ((c & 0xffff) == c) {
                 result += String.fromCharCode(c);
             } else {
-                if (String.fromCodePoint) {
-                    result += String.fromCodePoint(c);
-                } else {
-                    c = (c - 0x10000) | 0;
-                    result += String.fromCharCode(
-                        0xd800 | (c >>> 10),
-                        0xdc00 | (c & 0x03fff)
-                    );
-                }
+                c = (c - 0x10000);
+                result += String.fromCharCode(
+                    0xd800 | (c >>> 10),
+                    0xdc00 | (c & 0x03ff)
+                );
             }
         }
         return result;
